@@ -7,5 +7,38 @@
 
 <cursos></cursos>
 
-<h2>{{ 'Mi nombre es: ' + nombre}}</h2>
+<h2>{{ 'Mi nombre es: '}}</h2>
 
+<!-- <ul>
+  <li *ngFor = "let persona of personas">
+    {{persona.nombre}}
+  </li>
+    
+</ul> -->
+
+<div class="container">
+  <form [formGroup] = "miFormulario">
+    Usuario: <input
+    [class.is-invalid] = "miFormulario.get('username').touched && miFormulario.get('username').invalid" 
+    type = "text" 
+    class="form-control" 
+    formControlName = "username">
+    Password: <input 
+    [class.is-invalid] = "miFormulario.get('userpassword').touched && miFormulario.get('userpassword').invalid"
+    type="password" 
+    class="form-control" 
+    formControlName = "userpassword"><br>
+    <button class="btn btn-primary" type="submit">Enviar</button>
+
+  </form>
+  {{miFormulario.value | json}}
+</div>
+
+<div class="container">
+  <app-mensaje> 
+    <h1>Hola Mundo</h1>
+    <button class="btn btn-primary">hazme click</button>
+    <div> este es un div</div>
+    <p>mensaje desde el component app</p>
+  </app-mensaje>
+</div>
